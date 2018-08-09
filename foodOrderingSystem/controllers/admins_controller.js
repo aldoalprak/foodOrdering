@@ -36,6 +36,10 @@ class Admin {
             })
     }
 
+    static signInScreen(req, res) {
+        res.render("admins_signIn")
+    }
+
     static signIn(req, res) {
         // let token = jwt.sign({ email: req.body.email })
 
@@ -48,12 +52,12 @@ class Admin {
                 if (dataUser !== null) {
                     let checkPass = bcrypt.compareSync(req.body.password, dataUser.password)
                     if (checkPass) {
-                        res.status(200).json({ message: "user sign in successfully" })
+                        res.redirect("/dishes")
                     } else {
-                        res.status(300).json({ message: "wrong password/username" })
+                        res.send("wrong password/username")
                     }
                 } else {
-                    res.status(500).json({ message: 'user not found' })
+                    res.send("user not found")
                 }
             })
 

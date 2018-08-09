@@ -1,5 +1,6 @@
 const models = require('../models')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 class Chef {
 
@@ -34,6 +35,28 @@ class Chef {
             .then(() => {
                 res.redirect("/chefs")
             })
+    }
+
+    static signIn(req, res) {
+        models.Chef.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+            .then((dataUser) => {
+                if (dataUser !== null) {
+                    let checkPass = bcrypt.compareSync(req.body.password, dataUser.password)
+                    let token = jwt.sign({ id: dataUser.id }, 'helloworld123')
+                    if (checkPass) {
+                        res.status(200).json({ message: "user sign in successfully", token })
+                    } else {
+                        res.status(300).json({ message: "wrong password/username" })
+                    }
+                } else {
+                    res.status(500).json({ message: 'user not found, please sign up' })
+                }
+            })
+
     }
 
 }

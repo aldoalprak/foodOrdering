@@ -71,7 +71,11 @@ class Dish {
     }
 
     static getDishesApi(req, res) {
-        models.Dish.findAll()
+        models.Dish.findAll({
+            order: [
+                ["id", "ASC"]
+            ]
+        })
             .then(dataDishes => {
                 res.status(200).json({ message: "List of dishes", dataDishes })
             })

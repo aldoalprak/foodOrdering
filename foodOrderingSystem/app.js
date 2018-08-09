@@ -8,12 +8,13 @@ const apiOrders = require('./routes/apiOrders.js')
 const apiDishOrders = require('./routes/apiDishOrders.js')
 const admins = require('./routes/admins.js')
 const chefs = require('./routes/chefs.js')
-
+const login = require('./routes/login.js')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.set('view engine', 'ejs')
 
+app.use('/',login)
 app.use('/dishes', dishes)
 app.use('/api/dishes', apiDishes)
 app.use('/api/customers', apiCustomers)

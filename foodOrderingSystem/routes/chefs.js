@@ -6,5 +6,6 @@ router.get('/', Chef.allChef)
 router.get('/add', Chef.addScreen)
 router.post('/add', Chef.add)
 router.get('/:id/delete', Chef.delete)
+router.post('/signin', Chef.signIn)
 
 module.exports = router

@@ -1,5 +1,5 @@
 'use strict';
-const bcrypt = require('bcrypt')
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -12,16 +12,40 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-
-    let hash = bcrypt.hashSync("helloworld123", 10)
-    return queryInterface.bulkInsert('Admins', [{
-      email: 'admin@mail.com',
-      password: hash,
+    return queryInterface.bulkInsert('DishOrders', [{
+      DishId: 1,
+      OrderId: 1,
+      portions: 2,
       createdAt: new Date,
       updatedAt: new Date
     }, {
-      email: 'admin2@mail.com',
-      password: hash,
+      DishId: 2,
+      OrderId: 1,
+      portions: 3,
+      createdAt: new Date,
+      updatedAt: new Date
+    }, {
+      DishId: 3,
+      OrderId: 2,
+      portions: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    }, {
+      DishId: 1,
+      OrderId: 2,
+      portions: 2,
+      createdAt: new Date,
+      updatedAt: new Date
+    }, {
+      DishId: 3,
+      OrderId: 3,
+      portions: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    }, {
+      DishId: 2,
+      OrderId: 3,
+      portions: 1,
       createdAt: new Date,
       updatedAt: new Date
     }], {});

@@ -12,15 +12,22 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-
     let hash = bcrypt.hashSync("helloworld123", 10)
-    return queryInterface.bulkInsert('Admins', [{
-      email: 'admin@mail.com',
+    return queryInterface.bulkInsert('Customers', [{
+      username: "aldo",
+      email: 'aldo@mail.com',
       password: hash,
       createdAt: new Date,
       updatedAt: new Date
     }, {
-      email: 'admin2@mail.com',
+      username: "dora",
+      email: 'dora@mail.com',
+      password: hash,
+      createdAt: new Date,
+      updatedAt: new Date
+    }, {
+      username: "diego",
+      email: 'diego@mail.com',
       password: hash,
       createdAt: new Date,
       updatedAt: new Date
