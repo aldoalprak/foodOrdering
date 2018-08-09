@@ -3,7 +3,11 @@ const models = require("../models")
 class Dish {
 
     static showAll(req, res) {
-        models.Dish.findAll()
+        models.Dish.findAll({
+            order: [
+                ["id", "ASC"]
+            ]
+        })
             .then(dataDishes => {
                 res.render("dishes_showAll", { dataDishes })
             })

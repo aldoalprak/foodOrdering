@@ -29,7 +29,7 @@ class Customer {
             }
         })
             .then((dataUser) => {
-                if (dataUser !== undefined) {
+                if (dataUser !== null) {
                     let checkPass = bcrypt.compareSync(req.body.password, dataUser.password)
                     let token = jwt.sign({ id: dataUser.id }, 'helloworld123')
                     if (checkPass) {

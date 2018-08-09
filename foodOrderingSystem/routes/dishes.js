@@ -5,8 +5,8 @@ const Dish = require('../controllers/dishes_controller.js')
 router.get('/', Dish.showAll)
 router.get('/add', Dish.addScreen)
 router.post('/add', Dish.add)
-router.get('/edit/:id', Dish.editScreen)
-router.post('/edit/:id', Dish.edit)
-router.get('/delete/:id', Dish.delete)
+router.get('/:id/edit', Dish.editScreen)
+router.post('/:id/edit', Dish.edit)
+router.get('/:id/delete', Dish.delete)
 
 module.exports = router

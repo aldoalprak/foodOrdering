@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   var DishOrder = sequelize.define('DishOrder', {
     DishId: DataTypes.INTEGER,
     OrderId: DataTypes.INTEGER,
-    portions: DataTypes.INTEGER
+    portions: DataTypes.INTEGER,
+    Completed: DataTypes.BOOLEAN
   }, {});
   DishOrder.associate = function (models) {
     DishOrder.belongsTo(models.Dish, { foreignKey: "DishId" })

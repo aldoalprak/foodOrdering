@@ -25,8 +25,8 @@
                     <%= dataDish.duration %>
                 </td>
                 <td>
-                    <a href='/dishes/edit/<%= dataDish.id%>'>edit</a>||
-                    <a href='/dishes/delete/<%= dataDish.id%>' onclick="return confirm('are you sure want to delete this dish?')">delete</a>
+                    <a href='/dishes/<%= dataDish.id%>/edit'>edit</a>||
+                    <a href='/dishes/<%= dataDish.id%>/delete' onclick="return confirm('are you sure want to delete this dish?')">delete</a>
                 </td>
             </tr>
             <%})%>
