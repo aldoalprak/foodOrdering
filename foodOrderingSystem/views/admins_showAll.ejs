@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Dishes List</title>
+    <title>Admins List</title>
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Dishes</a>
+            <a href="#" class="brand-logo">Customize Admin</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="/dishes">Home</a>
@@ -32,39 +32,25 @@
         </div>
     </nav>
     <div class="fixed-action-btn">
-        <a href='/dishes/add' class="btn-floating btn-large red">
+        <a href='/admins/add' class="btn-floating btn-large red">
             <i class="large material-icons">add</i>
         </a>
     </div>
     <table class="highlight">
         <thead>
             <tr>
-                <th>description</th>
-                <th>image</th>
-                <th>price</th>
-                <th>duration</th>
-                <th>options</th>
+                <th>email</th>
             </tr>
         </thead>
 
         <tbody>
-            <% dataDishes.forEach(dataDish =>{%>
+            <% dataAdmins.forEach(dataAdmin =>{%>
                 <tr>
                     <td>
-                        <%= dataDish.description %>
+                        <%= dataAdmin.email %>
                     </td>
                     <td>
-                        <img src=<%=dataDish.image %> height="82" width="82">
-                    </td>
-                    <td>
-                        <%= dataDish.price%>
-                    </td>
-                    <td>
-                        <%= dataDish.duration %>
-                    </td>
-                    <td>
-                        <a href='/dishes/<%= dataDish.id%>/edit'>edit</a>||
-                        <a href='/dishes/<%= dataDish.id%>/delete' onclick="return confirm('are you sure want to delete this dish?')">delete</a>
+                        <a href='/admins/<%= dataAdmin.id%>/delete' onclick="return confirm('are you sure want to delete this ADMIN?')">delete</a>
                     </td>
                 </tr>
                 <%})%>

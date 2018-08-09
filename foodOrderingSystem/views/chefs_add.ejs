@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Dishes Add</title>
+    <title>Chefs Add</title>
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Dishes Add</a>
+            <a href="#" class="brand-logo">Chefs Add</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="login.html">logout</a>
@@ -22,19 +22,13 @@
             </ul>
         </div>
     </nav>
-    <form action="/dishes/add" method="POST">
-        Description:
+    <form action="/chefs/add" method="POST">
+        Email:
         <br>
-        <input type="text" name="description">
-        <br> Image:
+        <input type="text" name="email">
+        <br> Password:
         <br>
-        <input type="text" name="image">
-        <br> Price:
-        <br>
-        <input type="text" name="price">
-        <br> Duration:
-        <br>
-        <input type="text" name="duration">
+        <input type="password" name="password">
         <br>
         <br>
         <input type="submit">

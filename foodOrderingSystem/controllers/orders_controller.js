@@ -31,11 +31,11 @@ class Order {
                         .then(dataOrder => {
                             models.DishOrder.create({
                                 DishId: req.body.DishId,
-                                OrderId: req.params.id,
+                                OrderId: dataOrder.id,
                                 portions: req.body.portions
                             })
                                 .then(() => {
-                                    res.status(200).json({ message: "order successfully submitted" })
+                                    res.status(200).json({ message: "order successfully submitted", OrderId: dataOrder.id })
                                 })
                                 .catch(err => {
                                     res.status(500).json({ message: err.message })

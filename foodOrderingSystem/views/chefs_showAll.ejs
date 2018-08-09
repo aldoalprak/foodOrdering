@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Dishes List</title>
+    <title>Chefs List</title>
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Dishes</a>
+            <a href="#" class="brand-logo">Customize Chefs</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="/dishes">Home</a>
@@ -32,39 +32,25 @@
         </div>
     </nav>
     <div class="fixed-action-btn">
-        <a href='/dishes/add' class="btn-floating btn-large red">
+        <a href='/chefs/add' class="btn-floating btn-large red">
             <i class="large material-icons">add</i>
         </a>
     </div>
     <table class="highlight">
         <thead>
             <tr>
-                <th>description</th>
-                <th>image</th>
-                <th>price</th>
-                <th>duration</th>
-                <th>options</th>
+                <th>email</th>
             </tr>
         </thead>
 
         <tbody>
-            <% dataDishes.forEach(dataDish =>{%>
+            <% dataChefs.forEach(dataChef =>{%>
                 <tr>
                     <td>
-                        <%= dataDish.description %>
+                        <%= dataChef.email %>
                     </td>
                     <td>
-                        <img src=<%=dataDish.image %> height="82" width="82">
-                    </td>
-                    <td>
-                        <%= dataDish.price%>
-                    </td>
-                    <td>
-                        <%= dataDish.duration %>
-                    </td>
-                    <td>
-                        <a href='/dishes/<%= dataDish.id%>/edit'>edit</a>||
-                        <a href='/dishes/<%= dataDish.id%>/delete' onclick="return confirm('are you sure want to delete this dish?')">delete</a>
+                        <a href='/chefs/<%= dataChef.id%>/delete' onclick="return confirm('are you sure want to delete this chef?')">delete</a>
                     </td>
                 </tr>
                 <%})%>
