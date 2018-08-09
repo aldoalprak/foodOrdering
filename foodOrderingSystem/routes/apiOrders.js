@@ -4,7 +4,6 @@ const Order = require('../controllers/orders_controller.js')
 
 router.post('/:id/submitorder', Order.submitOrderApi)
 router.get('/allOrder', Order.allOrder)
-router.get('/:id/nextDish', Order.nextDish)
-router.get('/totalPriceAndDuration', Order.totalPriceAndDuration)
+router.get('/totalPrice', Order.totalPrice)
 
 module.exports = router

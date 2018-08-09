@@ -54,32 +54,7 @@ class Order {
             })
     }
 
-    static nextDish(req, res) {
-        models.DishOrder.update({ Completed: true },
-            {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(() => {
-                models.DishOrder.findAll({
-                    include: [{
-                        model: models.Dish
-                    }],
-                    order: [
-                        ["id", "ASC"]
-                    ],
-                    where: {
-                        Completed: false
-                    }
-                })
-                    .then(dataOrder => {
-                        res.status(200).json({ message: "order list", dataOrder: dataOrder[0] })
-                    })
-            })
-    }
-
-    static totalPriceAndDuration(req, res) {
+    static totalPrice(req, res) {
         let decoded = jwt.verify(req.headers.token, "helloworld123")
         models.Order.findAll({
             where: {
@@ -91,15 +66,16 @@ class Order {
                 // res.json({ dataOrder })
                 let dishes = dataOrder[0].Dishes
                 let totalPrice = 0
-                let duration = 0
                 for (let i = 0; i < dishes.length; i++) {
                     totalPrice += dishes[i].price * dishes[i].DishOrder.portions
-                    duration += dishes[i].duration
                 }
-
-                res.status(200).json({ message: "total price and duration", totalPrice, duration })
+                res.status(200).json({ message: "total price", totalPrice })
             })
     }
+
+
+
+
 }
 
 module.exports = Order
