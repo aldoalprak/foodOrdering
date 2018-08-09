@@ -1,0 +1,36 @@
+<body>
+    <h1></h1>
+
+    <table>
+        <tr>
+            <th>description</th>
+            <th>image</th>
+            <th>price</th>
+            <th>duration</th>
+            <th>options</th>
+
+        </tr>
+        <% dataDishes.forEach(dataDish =>{%>
+            <tr>
+                <td>
+                    <%= dataDish.description %>
+                </td>
+                <td>
+                    <%= dataDish.image %>
+                </td>
+                <td>
+                    <%= dataDish.price%>
+                </td>
+                <td>
+                    <%= dataDish.duration %>
+                </td>
+                <td>
+                    <a href='/dishes/edit/<%= dataDish.id%>'>edit</a>||
+                    <a href='/dishes/delete/<%= dataDish.id%>' onclick="return confirm('are you sure want to delete this dish?')">delete</a>
+                </td>
+            </tr>
+            <%})%>
+
+    </table>
+
+</body>

@@ -1,0 +1,22 @@
+<body>
+    <form action="/dishes/edit/<%= dataDish.id%>" method="POST">
+        Description:
+        <br>
+        <input type="text" name="description" value=<%=dataDish.description %> >
+        <br> Image:
+        <br>
+        <input type="text" name="image" value=<%=dataDish.image %>>
+        <br> Price:
+        <br>
+        <input type="text" name="price" value=<%=dataDish.price %>>
+        <br> Duration:
+        <br>
+        <input type="text" name="duration" value=<%=dataDish.duration %>>
+        <br>
+        <br>
+        <input type="submit" value="update">
+        <p>
+            <%= dataDish.description%>
+        </p>
+    </form>
+</body>
