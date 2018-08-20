@@ -1,6 +1,7 @@
 Steps to Get Started
 
 1. npm install
+2. Change username and password in config.json
 2. sequelize db:create
 3. sequelize db:migrate
 4. sequelize db:seed:all

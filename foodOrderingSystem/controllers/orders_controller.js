@@ -8,7 +8,7 @@ class Order {
 
         models.Order.findOne({
             where: {
-                id: req.params.id
+                id: req.params.id //this can get from the localstorage if not the default value =0
             }
         })
             .then(dataOrder => {
@@ -47,7 +47,10 @@ class Order {
 
     static allOrder(req, res) {
         models.Order.findAll({
-            include: models.Dish
+            include: models.Dish,
+            order: [
+                ["id", "ASC"]
+            ]
         })
             .then(dataOrder => {
                 res.status(200).json({ dataOrder })
@@ -55,10 +58,10 @@ class Order {
     }
 
     static totalPrice(req, res) {
-        let decoded = jwt.verify(req.headers.token, "helloworld123")
+        // let decoded = jwt.verify(req.headers.token, "helloworld123")
         models.Order.findAll({
             where: {
-                CustomerId: decoded.id
+                id: req.params.id //get from localstorages/asyncstorage
             },
             include: models.Dish
         })

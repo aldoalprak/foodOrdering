@@ -46,7 +46,7 @@ class Chef {
             .then((dataUser) => {
                 if (dataUser !== null) {
                     let checkPass = bcrypt.compareSync(req.body.password, dataUser.password)
-                    let token = jwt.sign({ id: dataUser.id }, 'helloworld123')
+                    let token = jwt.sign({ email: dataUser.email }, 'helloworld123')
                     if (checkPass) {
                         res.status(200).json({ message: "user sign in successfully", token })
                     } else {
