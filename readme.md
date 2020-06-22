@@ -1,3 +1,9 @@
+Brief description: 
+The ​system ​is ​meant ​to ​assist ​restaurants ​in ​processing ​the orders ​of ​the customers.
+Using ​the ​mobile ​device, ​each customer will ​be ​able ​to ​select ​a ​number ​of dishes
+from ​the ​menu ​to ​place ​the order. ​The dishes will ​be ​then ​be ​grouped ​and ​forwarded
+to chefs ​by ​the ​system. ​Whenever ​a chef ​finish ​cooking ​a dish, ​the chef would ​click ​to see ​the ​what ​should ​be ​his ​next dish. ​
+
 Steps to Get Started
 
 1. npm install
@@ -5,10 +11,10 @@ Steps to Get Started
 2. sequelize db:create
 3. sequelize db:migrate
 4. sequelize db:seed:all
+5. npm run start
 
 admin login username = admin@mail.com
 admin login password = helloworld123
-customer login password = helloworld123
 
 Routes
 
@@ -71,4 +77,4 @@ API Customers
 | Routes                | HTTP Method | Descriptions    |
 |-----------------------|-------------|-----------------|
 | /api/customers/signUp | POST        | customer signUp |
-| /api/customers/signUp | POST        | customer signIn |
+| /api/customers/signIn | POST        | customer signIn |
