@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
@@ -23,6 +24,6 @@ app.use('/api/dishorders', apiDishOrders)
 app.use('/admins', admins)
 app.use('/chefs', chefs)
 
-app.listen(3000, function () {
-	console.log("listen")
+app.listen(process.env.PORT, function () {
+	console.log(`ready in port ${process.env.PORT}`)
 })
