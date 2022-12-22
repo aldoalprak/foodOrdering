@@ -16,7 +16,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^7.4.3",
     "sequelize": "^4.38.0",
     "sequelize-cli": "^4.0.0"
